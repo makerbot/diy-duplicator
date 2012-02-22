@@ -23,6 +23,7 @@ echo +++ Writing contents of master.contents ++++
 echo +++    to all available SD cards        ++++
 echo ++++++++++++++++++++++++++++++++++++++++++++
 
+
 # Assume that there's already a partition table on the card
 image_card () {
     drive=${1}
@@ -30,13 +31,13 @@ image_card () {
     if [ -e ${partition} ]
     then
 	echo Imaging ${parition}...
-	umount ${partition}
-	mkfs.vfat -n ${VOLUME_NAME} ${partition}
+	sudo umount ${partition}
+	sudo mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
 	mountpoint=`mktemp -d`
-	mount ${partition} ${mountpoint}
-	cp -r ./master.contents/* ${mountpoint}
-	umount ${mountpoint}
-	rmdir ${mountpoint}
+	sudo mount ${partition} ${mountpoint}
+	sudo cp -r ./master.contents/* ${mountpoint}
+	sudo umount ${mountpoint}
+	sudo rmdir ${mountpoint}
     else
 	echo No card in socket for ${drive}
     fi
