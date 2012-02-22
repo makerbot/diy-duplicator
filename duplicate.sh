@@ -31,13 +31,14 @@ image_card () {
     if [ -e ${partition} ]
     then
 	echo Imaging ${parition}...
-	sudo umount ${partition}
-	sudo mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
+	umount ${partition}
+	mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
 	mountpoint=`mktemp -d`
-	sudo mount ${partition} ${mountpoint}
-	sudo cp -r ./master.contents/* ${mountpoint}
-	sudo umount ${mountpoint}
-	sudo rmdir ${mountpoint}
+	mount ${partition} ${mountpoint}
+	cp -r ./master.contents/* ${mountpoint}
+	sync
+	umount ${mountpoint}
+	rmdir ${mountpoint}
     else
 	echo No card in socket for ${drive}
     fi
