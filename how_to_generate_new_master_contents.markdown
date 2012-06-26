@@ -1,5 +1,5 @@
 # How To Generate New Master Contents
-After a new software release, if the values used to skein objects or the skeining engine itself changes, all the example files in master.contents need to be regenerated.  For the single extrusion prints and dual extrusion prints that are not overlapping (i.e. example_dual), this is fairly trivial.  However, for calibration dual, this becomes more difficult, since we need to do some hacking of the gcode file to get rafting to work.
+After a new software release, if the values used to skein objects or the skeining engine itself changes, all the example files in master.contents need to be regenerated.
 
 ## Before You Start
 * Make sure you have the most recent version of the start and end gcodes
@@ -43,7 +43,8 @@ Export Name:
     calibration_single
 
 ### Calibration Dual: A Hilbert Cube
-NB: This file requires some finesse, since rafting this print natively creates two coincidental rafts.  See section "Replacing Dual Extrusion Rafts for more information.
+NB: This file requires some finesse, since rafting this print natively creates two coincidental rafts.  See section "Cutting Dual Extrusion Rafts for more information.
+
 STL Files:
 
     hilbert_cube1.stl
@@ -81,7 +82,7 @@ Export Name:
 
     spiral_box
 
-## Replacing Dual Extrusion Rafts
+## Cutting Dual Extrusion Rafts
 The Hilbert Cube is nuanced in the sense that it requires some cutting of specific toolhead's layers.
 * Merge hilbert_cube1.stl and hilbert_cube1_support.stl for dualstrusion with rafting.
 * Find the very first layer printed, and remember which toolhead is printing.  This is the toolhead that will be printing the raft.
