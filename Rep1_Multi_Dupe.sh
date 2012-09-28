@@ -7,7 +7,7 @@ echo Executing from "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 while :
 do
 	echo "Beginning Duplication!"
-	sudo bash ./duplicate.sh
+	sudo bash ./Rep1_Duplicate.sh
 	echo
 	echo Duplication Complete! Please remove all SD cards and insert New ones!!
 	echo

@@ -21,6 +21,7 @@ VOLUME_NAME="MakerBot"
 echo ++++++++++++++++++++++++++++++++++++++++++++
 echo +++ Writing contents of master.contents ++++
 echo +++    to all available SD cards        ++++
+echo +++        For Replicator 1             ++++
 echo ++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -35,7 +36,7 @@ image_card () {
 	mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
 	mountpoint=`mktemp -d`
 	mount ${partition} ${mountpoint}
-	cp -r ./master.contents/* ${mountpoint}
+	cp -r ./Replicator_1_contents/* ${mountpoint}
 	sync
 	umount ${mountpoint}
 	rmdir ${mountpoint}
