@@ -11,7 +11,8 @@
 # any guarantees about the size of the target card, 
 # anyway.
 
-if [ ! -d "./master.contents" ]; then
+MASTER_CONTENTS="./Replicator_2_contents"
+if [ ! -d ${MASTER_CONTENTS} ]; then
 	echo No master contents directory found! Giving up.
 	exit;
 fi
@@ -36,7 +37,7 @@ image_card () {
 	mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
 	mountpoint=`mktemp -d`
 	mount ${partition} ${mountpoint}
-	cp -r ./Replicator_2_contents/* ${mountpoint}
+	cp -r ${MASTER_CONTENTS}"/*" ${mountpoint}
 	sync
 	umount ${mountpoint}
 	rmdir ${mountpoint}
