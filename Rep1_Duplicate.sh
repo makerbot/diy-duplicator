@@ -38,7 +38,7 @@ image_card () {
 	mkdosfs -n ${VOLUME_NAME} -v -F 16 -S 512 ${partition}
 	mountpoint=`mktemp -d`
 	mount ${partition} ${mountpoint}
-	cp -r ${MASTER_CONTENTS}"/*" ${mountpoint}
+	cp -r ${MASTER_CONTENTS}/* ${mountpoint}
 	sync
 	umount ${mountpoint}
 	rmdir ${mountpoint}
