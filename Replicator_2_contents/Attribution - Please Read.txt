@@ -1,0 +1,16 @@
+MakerBot would like to deeply thank our community for all of its support and inginuity. 
+All of these examples have been sourced from Thingiverse and help showcase not only the abilities of the machine,
+but the diversity of the users that operate them. We hope the Making bug bites you and we can feature your designs
+from Thingiverse in the future! Until then, Keep it Awesome!
+
+These items have been licensed under the Attribution - Share Alike - Creative Commons license.
+
+Chain Generator ceated by Sal (http://www.thingiverse.com/thing:28405)
+Mr.Jaws created by Mahoney (http://www.thingiverse.com/thing:14702)
+Stretchy Bracelet created by Emmett (http://www.thingiverse.com/thing:13505)
+
+These items have been licensed under the Creative Commons - GNU GPL license.
+Hair Comb created by repraprook (http://www.thingiverse.com/thing:1140)
+
+These items have licensed under the Public Domain license.
+Knurled surface finishing library created by aubenc (http://www.thingiverse.com/thing:9095)
